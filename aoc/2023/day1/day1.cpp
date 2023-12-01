@@ -22,15 +22,15 @@ int main(int argc, char **argv) {
     return 1; 
   }
 
-  string input;
+  string line;
   int sum = 0, count = 1;
   
-  while (getline(file, input)){
+  while (getline(file, line)){
     int num = 0;
-    for (int i = 0; i < input.length(); i++) {
-      if (isdigit(input[i])) {
-        int temp = static_cast<int>(input[i]) - static_cast<int>('0');
-        int letter_temp = get_digit_forward(input.substr(0, i));
+    for (int i = 0; i < line.length(); i++) {
+      if (isdigit(line[i])) {
+        int temp = static_cast<int>(line[i]) - static_cast<int>('0');
+        int letter_temp = get_digit_forward(line.substr(0, i));
         if (letter_temp == -1) {
           num += temp * 10;
         } else {
@@ -39,10 +39,10 @@ int main(int argc, char **argv) {
         break;
       }
     }
-    for (int i = input.length() - 1; i >= 0; i--) {
-      if (isdigit(input[i])) {
-        int temp = static_cast<int>(input[i]) - static_cast<int>('0');
-        int letter_temp = get_digit_backward(input.substr(i + 1));
+    for (int i = line.length() - 1; i >= 0; i--) {
+      if (isdigit(line[i])) {
+        int temp = static_cast<int>(line[i]) - static_cast<int>('0');
+        int letter_temp = get_digit_backward(line.substr(i + 1));
         if (letter_temp == -1) {
           num += temp;
         } else {
@@ -62,24 +62,25 @@ int main(int argc, char **argv) {
 }
 
 int get_digit_forward(string substring) {
-  for (int i = 0; i < substring.length(); i++) {
-    if (i + 2 < substring.length() && substring[i] == 'o' && substring[i + 1] == 'n' && substring[i + 2] == 'e') {
+  int length = substring.length();
+  for (int i = 0; i < length; i++) {
+    if (i + 2 < substring.length() && substring.compare(i, 3, "one") == 0) {
       return  1;
-    } else if (i + 2 < substring.length() && substring[i] == 't' && substring[i + 1] == 'w' && substring[i + 2] == 'o') {
+    } else if (i + 2 < substring.length() && substring.compare(i, 3, "two") == 0) {
       return  2;
-    } else if (i + 4 < substring.length() && substring[i] == 't' && substring[i + 1] == 'h' && substring[i + 2] == 'r' && substring[i + 3] == 'e' && substring[i + 4] == 'e') {
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "three") == 0) {
       return 3;
-    } else if (i + 3 < substring.length() && substring[i] == 'f' && substring[i + 1] == 'o' && substring[i + 2] == 'u' && substring[i + 3] == 'r') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "four") == 0) {
       return  4;
-    } else if (i + 3 < substring.length() && substring[i] == 'f' && substring[i + 1] == 'i' && substring[i + 2] == 'v' && substring[i + 3] == 'e') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "five") == 0) {
       return  5;
-    } else if (i + 2 < substring.length() && substring[i] == 's' && substring[i + 1] == 'i' && substring[i + 2] == 'x') {
+    } else if (i + 2 < substring.length() && substring.compare(i, 3, "six") == 0) {
       return  6;
-    } else if (i + 4 < substring.length() && substring[i] == 's' && substring[i + 1] == 'e' && substring[i + 2] == 'v' && substring[i + 3] == 'e' && substring[i + 4] == 'n') {
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "seven") == 0) {
       return  7;
-    } else if (i + 4 < substring.length() && substring[i] == 'e' && substring[i + 1] == 'i' && substring[i + 2] == 'g' && substring[i + 3] == 'h' && substring[i + 4] == 't') {
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "eight") == 0) {
       return 8;
-    } else if (i + 3 < substring.length() && substring[i] == 'n' && substring[i + 1] == 'i' && substring[i + 2] == 'n' && substring[i + 3] == 'e') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "nine") == 0) {
       return 9;
     }
   }
@@ -89,23 +90,23 @@ int get_digit_forward(string substring) {
 int get_digit_backward(string substring) {
   int temp_num = -1;
   for (int i = 0; i < substring.length(); i++) {
-    if (i + 2 < substring.length() && substring[i] == 'o' && substring[i + 1] == 'n' && substring[i + 2] == 'e') {
-      temp_num = 1;
-    } else if (i + 2 < substring.length() && substring[i] == 't' && substring[i + 1] == 'w' && substring[i + 2] == 'o') {
-      temp_num = 2;
-    } else if (i + 4 < substring.length() && substring[i] == 't' && substring[i + 1] == 'h' && substring[i + 2] == 'r' && substring[i + 3] == 'e' && substring[i + 4] == 'e') {
+    if (i + 2 < substring.length() && substring.compare(i, 3, "one") == 0) {
+      temp_num =  1;
+    } else if (i + 2 < substring.length() && substring.compare(i, 3, "two") == 0) {
+      temp_num =  2;
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "three") == 0) {
       temp_num = 3;
-    } else if (i + 3 < substring.length() && substring[i] == 'f' && substring[i + 1] == 'o' && substring[i + 2] == 'u' && substring[i + 3] == 'r') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "four") == 0) {
       temp_num = 4;
-    } else if (i + 3 < substring.length() && substring[i] == 'f' && substring[i + 1] == 'i' && substring[i + 2] == 'v' && substring[i + 3] == 'e') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "five") == 0) {
       temp_num = 5;
-    } else if (i + 2 < substring.length() && substring[i] == 's' && substring[i + 1] == 'i' && substring[i + 2] == 'x') {
+    } else if (i + 2 < substring.length() && substring.compare(i, 3, "six") == 0) {
       temp_num = 6;
-    } else if (i + 4 < substring.length() && substring[i] == 's' && substring[i + 1] == 'e' && substring[i + 2] == 'v' && substring[i + 3] == 'e' && substring[i + 4] == 'n') {
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "seven") == 0) {
       temp_num = 7;
-    } else if (i + 4 < substring.length() && substring[i] == 'e' && substring[i + 1] == 'i' && substring[i + 2] == 'g' && substring[i + 3] == 'h' && substring[i + 4] == 't') {
+    } else if (i + 4 < substring.length() && substring.compare(i, 5, "eight") == 0) {
       temp_num = 8;
-    } else if (i + 3 < substring.length() && substring[i] == 'n' && substring[i + 1] == 'i' && substring[i + 2] == 'n' && substring[i + 3] == 'e') {
+    } else if (i + 3 < substring.length() && substring.compare(i, 4, "nine") == 0) {
       temp_num = 9;
     }
   }
