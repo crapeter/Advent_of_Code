@@ -47,7 +47,7 @@ Here's the language for each day:
 
 21st: 
 
-22dn: 
+22nd: 
 
 23rd: 
 
