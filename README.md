@@ -14,45 +14,45 @@ Here's the language for each day:
 
 4th: Java
 
-5th: 
+5th: JS
 
-6th: 
+6th: C++
 
-7th: 
+7th: C++
 
-8th: 
+8th: Python
 
-9th: 
+9th: C++
 
-10th: 
+10th: JS
 
-11th: 
+11th: Python
 
-12th: 
+12th: Java
 
-13th: 
+13th: Python
 
-14th: 
+14th: C++
 
-15th: 
+15th: Java
 
-16th: 
+16th: Java
 
-17th: 
+17th: JS
 
-18th: 
+18th: JS
 
-19th: 
+19th: Java
 
-20th: 
+20th: C++
 
-21st: 
+21st: Python
 
-22nd: 
+22nd: Java
 
-23rd: 
+23rd: Java
 
-24th: 
+24th: Python
 
-25th: 
+25th: C++
 
