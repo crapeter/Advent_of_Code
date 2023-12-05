@@ -1,6 +1,7 @@
 # Advent_of_Code
 
-This is my first Advent of Code. As someone who likes low level learning I decided to also do a random language every day.
+As someone who likes low level learning I decided to also do a random language every day.
+
 I'm much less skilled that he is so I only chose 4 languages: C++, Java, JS and Python.
 
 Here's the language for each day:
