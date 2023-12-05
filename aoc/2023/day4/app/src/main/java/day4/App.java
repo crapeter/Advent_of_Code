@@ -31,13 +31,13 @@ public class App {
             count++;
           }
         }
+        result += (int) Math.pow(2, count - 1);
 
         //part 2
         for (int i = 0; i < count; i++) {
           nums[counter + 1 + i] += nums[counter];
         }
-
-        result += (int) Math.pow(2, count - 1);
+        
         counter++;
       }
     } catch (FileNotFoundException e) {
