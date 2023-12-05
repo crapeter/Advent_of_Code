@@ -4,7 +4,7 @@ As someone who likes low level learning I decided to also do a random language e
 
 I'm much less skilled that he is so I only chose 4 languages: C++, Java, JS and Python.
 
-Here's the language for each day:
+Here's the language for each day (2023):
 
 1st: C++
 
