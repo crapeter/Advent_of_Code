@@ -34,6 +34,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
   }
 
   //part 1
+  let p1_result = 0;
   for (let i = 0; i < time_values.length; i++) {
     let count = 0
     for (let j = 0; j < time_values[i]; j++) {
@@ -47,7 +48,8 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     }
     results[i] = count
   }
-  console.log(results.reduce((acc, c_val) => acc * c_val, 1))
+  p1_result = results.reduce((acc, c_val) => acc * c_val, 1)
+  console.log(p1_result)
 
   //part 2
   let time_value = parseInt(time_values.join('', 10)) 
