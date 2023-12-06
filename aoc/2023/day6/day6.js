@@ -34,28 +34,21 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
   //part 1
   let p1_result = 0;
-  for (let i = 0; i < time_values.length; i++) {
-    let count = 0
-    for (let j = 0; j < time_values[i]; j++) {
-      let time_moving = time_values[i] - j;
-      if (time_moving * j > distance_values[i]) {
-        count++;
-      }
-    }
-    results[i] = count
-  }
+  time_values.forEach((time, index) => { let count = get_results(time, distance_values[index]); results[index] = count })
   p1_result = results.reduce((acc, c_val) => acc * c_val, 1)
   console.log(p1_result)
 
   //part 2
   let time_value = parseInt(time_values.join('', 10)) 
   let distance_value = parseInt(distance_values.join('', 10))
-  let p2_result = 0;
-  for (let i = 0; i < time_value; i++) {
-    let time_moving = time_value - i;
-    if (time_moving * i > distance_value) {
-      p2_result++;
-    }
-  }
+  let p2_result = get_results(time_value, distance_value);
   console.log(p2_result)
 })
+
+function get_results(time, distance) {
+  let result = 0;
+  for (let i = 0; i < time; i++)
+    if ((time - i) * i > distance)
+      result++;
+  return result
+}
