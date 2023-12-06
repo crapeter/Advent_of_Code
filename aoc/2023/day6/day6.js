@@ -11,7 +11,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
   let time_values = []
   let distance_values = []
-  let results = Array(time_values.length).fill(0) 
+  let results = Array(time_values.length).fill(0)
 
   const lines = data.trim().split('\n')
   const regex = /\d+/g;
@@ -38,9 +38,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     let count = 0
     for (let j = 0; j < time_values[i]; j++) {
       let time_moving = time_values[i] - j;
-      if (time_moving === time_values[i] || time_moving === 0) {
-        continue;
-      }
       if (time_moving * j > distance_values[i]) {
         count++;
       }
@@ -56,9 +53,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
   let p2_result = 0;
   for (let i = 0; i < time_value; i++) {
     let time_moving = time_value - i;
-    if (time_moving === time_value || time_moving === 0) {
-      continue;
-    }
     if (time_moving * i > distance_value) {
       p2_result++;
     }
