@@ -47,7 +47,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     }
     results[i] = count
   }
-  // console.log(results)
   console.log(results.reduce((acc, c_val) => acc * c_val, 1))
 
   //part 2
