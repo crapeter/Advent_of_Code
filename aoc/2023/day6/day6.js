@@ -11,8 +11,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
   let time_values = []
   let distance_values = []
-  let results = Array(time_values.length).fill(0)
-  let result = 0;
+  let results = Array(time_values.length).fill(0) 
 
   const lines = data.trim().split('\n')
   const regex = /\d+/g;
