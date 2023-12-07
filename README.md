@@ -18,7 +18,7 @@ Here's the language for each day (2023):
 
 6th: JS
 
-7th: C++
+7th: JS
 
 8th: Python
 
