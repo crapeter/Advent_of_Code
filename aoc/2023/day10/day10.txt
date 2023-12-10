@@ -1,0 +1,1 @@
+I don't know any good way to do this that isn't just a load of switch/else if checks. I also just don't want to do that chunky solution in JS.
