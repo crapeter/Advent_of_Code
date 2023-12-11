@@ -32,7 +32,7 @@ Here's the language for each day (2023):
 
 13th: Python
 
-14th: C++
+14th: Python
 
 15th: Java
 
@@ -44,7 +44,7 @@ Here's the language for each day (2023):
 
 19th: Java
 
-20th: C++
+20th: Python
 
 21st: Python
 
