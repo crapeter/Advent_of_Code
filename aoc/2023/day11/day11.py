@@ -10,17 +10,14 @@ EmptyCol = []
 result = 0
 
 for r in range(len(Lines)):
+    if all(row[r] == '.' for row in Lines):
+        EmptyCol.append(r)
     if all(char == '.' for char in Lines[r]):
         EmptyRow.append(r)
         continue
     for c in range(len(Lines[r])):
         if Lines[r][c] == '#':
             Coords[(r, c)] = True
-
-for c in range(len(Lines)):
-    empty_c = all(row[c] == '.' for row in Lines)
-    if empty_c:
-        EmptyCol.append(c)
 
 # part 1
 for (k, v), value in Coords.items():
