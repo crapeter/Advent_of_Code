@@ -28,9 +28,9 @@ Here's the language for each day (2023):
 
 11th: Python
 
-12th: Java
+12th: Python
 
-13th: Python
+13th: JS
 
 14th: Python
 
